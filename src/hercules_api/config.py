@@ -10,7 +10,7 @@ class Settings(BaseSettings):
     )
 
     database_url: str = Field(
-        default="postgresql+asyncpg://hercules:hercules@localhost:5432/hercules"
+        default="postgresql+asyncpg://hercules@localhost:5432/hercules"
     )
     usda_api_key: str | None = None
 

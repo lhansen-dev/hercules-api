@@ -1,9 +1,0 @@
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: hercules-api-config
-  namespace: hercules
-data:
-  HOST: "0.0.0.0"
-  PORT: "8000"
-  LOG_LEVEL: "INFO"

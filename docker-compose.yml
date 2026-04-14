@@ -4,14 +4,14 @@ services:
     container_name: hercules-postgres
     environment:
       POSTGRES_USER: hercules
-      POSTGRES_PASSWORD: hercules
       POSTGRES_DB: hercules
+      POSTGRES_HOST_AUTH_METHOD: trust
     ports:
       - "5432:5432"
     volumes:
       - hercules-pgdata:/var/lib/postgresql/data
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U hercules -d hercules"]
+      test: ["CMD-SHELL", "pg_isready -U hercules -d hercules -h localhost"]
       interval: 5s
       timeout: 3s
       retries: 10
